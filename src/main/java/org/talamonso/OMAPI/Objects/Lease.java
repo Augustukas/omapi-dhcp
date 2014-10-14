@@ -60,7 +60,26 @@ public class Lease extends Message {
 	public void updateState(int value) {
 		this.updateObjectAsInt("state", value);
 	}
-
+	
+	/**
+	 * updates the Flags value.
+	 * Value 02 for lease to be dynamic-bootp, state parameter in object will reset to 1(free).
+	 * Value 04 for lease to be reserved, state parameter in object must be 2(active) for it to take effect. 
+	 * @param value
+	 */
+	public void updateFlagsString(String value) {
+		this.updateObjectAsString("flags", value);	
+	}
+	
+	/**
+	 * Value 02 for dynamic-bootp lease.
+	 * Value 04 for reserved lease. 
+	 * @return flags of the lease.
+	 */
+	public int getFlags() {
+		return this.getObjectAsInt("flags");
+	}
+	
 	/**
 	 * @return Hostname of the lease.
 	 */
