@@ -281,10 +281,11 @@ public abstract class Message {
 			l2 = Convert.byteArrayToInt(KeyLength);
 			byte[] Key = new byte[l2];
 			bb.get(Key, 0, l2);
+			/*
 			if (new String(Key).equals("flags")) {
 				// TODO remove this stupid workaround if patch is available
 				break;
-			}
+			}*/
 			byte[] ValueLength = new byte[4];
 			bb.get(ValueLength, 0, 4);
 			l2 = Convert.byteArrayToInt(ValueLength);
