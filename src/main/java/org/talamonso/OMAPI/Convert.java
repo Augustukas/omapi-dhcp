@@ -68,7 +68,7 @@ public final class Convert {
 		long val = Convert.unsignedIntToLong(b);
 		Calendar cal = new GregorianCalendar();
 		cal.setTimeInMillis(val * 1000);
-		DateFormat fmt = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
 		fmt.setTimeZone(new SimpleTimeZone(0, "UTC"));
 		return fmt.format(cal.getTime());
 	}

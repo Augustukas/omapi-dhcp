@@ -238,9 +238,9 @@ public class Lease extends Message {
 	 * @return details of this objects
 	 */
 	public String toString() {
-		if (this.getState() != 2) {
+/*		if (this.getState() != 2) {
 			return "The lease " + this.getIpAddress() + " is free";
-		}
+		}*/
 		StringBuffer sb = new StringBuffer();
 		sb.append("This is an lease object\n");
 		sb.append("State:             " + this.getState() + "\n");
@@ -257,6 +257,7 @@ public class Lease extends Message {
 		sb.append("Host (handle!):    " + this.getHost() + "\n");
 		sb.append("Subnet (handle!):  " + this.getSubnet() + "\n");
 		sb.append("Pool (handle!):    " + this.getPool() + "\n");
+		sb.append("Flags (handle!):    " + this.getFlags() + "\n");
 		return sb.toString();
 	}
 }
